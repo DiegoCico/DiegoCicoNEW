@@ -1,0 +1,91 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+  background: linear-gradient(270deg, #0a0f32, #1e90ff, #3cb371, #ff6347);
+  background-size: 800% 800%;
+  animation: AnimatedGradient 30s ease infinite;
+  color: white;
+}
+
+.welcome-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #0a0f32; /* Dark blue background */
+}
+
+.animation-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #0a0f32, #06223b, #0a0f32, #06223b);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.enter-button {
+  padding: 15px 30px;
+  font-size: 1.5em;
+  color: #fff;
+  background-color: #06223b;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease;
+  z-index: 1;
+}
+
+.enter-button:hover {
+  transform: scale(1.05);
+  background-color: #0a0f32;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  background-color: rgba(255, 255, 255, 0.2);
+  animation: floatAnimation 20s linear infinite, opacityAnimation 20s linear infinite;
+}
+
+@keyframes floatAnimation {
+  0%, 100% { transform: translateY(0) translateX(0) scale(1); }
+  25% { transform: translateY(-100px) translateX(150px) scale(1.2); }
+  50% { transform: translateY(100px) translateX(-150px) scale(0.8); }
+  75% { transform: translateY(-50px) translateX(100px) scale(1.1); }
+}
+
+@keyframes opacityAnimation {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.3; }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes AnimatedGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

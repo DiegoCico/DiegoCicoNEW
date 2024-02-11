@@ -1,0 +1,129 @@
+/* Base Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #0a0f32;
+  color: #333;
+}
+
+/* Canvas Background */
+canvas#animatedBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Header and Navigation Styles */
+header {
+  background-color: #06223b;
+  padding: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  padding: 0 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff6347;
+}
+
+/* Social Media Section */
+.social-media {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.icon-container {
+  display: inline-block;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.icon-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide by default in mobile view */
+  }
+
+  .nav-links.active {
+    display: block; /* Show when active */
+  }
+}
+
+/* Fade-In Animation Styles */
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Centering the container */
+.header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px; /* Full viewport height */
+  text-align: center;
+}
+
+/* Typewriter effect */
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: .15em solid rgba(255, 255, 255, 0.75); /* The typewriter cursor */
+  margin: 0 auto;
+  animation: typewriter 5s steps(40, end) 1s forwards,
+  blinkTextCursor 750ms steps(40, end) infinite;
+}
+
+/* Typewriter keyframes */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkTextCursor {
+  from { border-right-color: rgba(255, 255, 255, 0.75); }
+  to { border-right-color: transparent; }
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .typewriter h1, .typewriter h2 {
+    font-size: 1.5em; /* Smaller font size for mobile devices */
+  }
+}
+
