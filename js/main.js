@@ -36,40 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Canvas Background Animation
-  const canvas = document.getElementById('animatedBackground');
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  const shapes = [];
-
-  function createShapes() {
-    for (let i = 0; i < 50; i++) {
-      const x = Math.random() * canvas.width;
-      const y = Math.random() * canvas.height;
-      const size = Math.random() * 5;
-      const color = `hsl(${Math.random() * 360}, 100%, 50%)`;
-      shapes.push({ x, y, size, color });
-    }
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    shapes.forEach(shape => {
-      ctx.fillStyle = shape.color;
-      ctx.beginPath();
-      ctx.arc(shape.x, shape.y, shape.size, 0, Math.PI * 2);
-      ctx.fill();
-    });
-
-    requestAnimationFrame(animate);
-  }
-
-  createShapes();
-  animate();
-
   window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;

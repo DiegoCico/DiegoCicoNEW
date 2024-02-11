@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Redirect to main.html after the animation
     setTimeout(() => {
-      window.location.href = '../html/main.html';
+      window.location.href = '';
     }, 500); // This duration should match the CSS animation duration
   });
 });
